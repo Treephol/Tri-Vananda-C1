@@ -302,7 +302,8 @@ footer {
   /* Proof grid */
   .proof-grid { grid-template-columns:1fr; border-top:none; }
   .proof-item { border-right:none; border-top:0.5px solid var(--rule); padding:28px 0 !important; }
-  .proof-num { font-size:36px; }
+  .proof-num { font-size:clamp(28px,7vw,36px); }
+  .proof-lbl { font-size:9px; letter-spacing:0.18em; }
   .proof-desc { font-size:15px; }
 
   /* Who / villas grid */
@@ -323,10 +324,11 @@ footer {
   .content-split-imgs { grid-template-rows:repeat(3,48vw); }
 
   /* Community right-aligned section → left on mobile */
-  .content-header-right { text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  .content-header-right { text-align:left !important; margin-left:0 !important; margin-right:0 !important; max-width:100% !important; }
   .content-header-right .label,
   .content-header-right .content-sub { justify-content:flex-start !important; }
-  .content-header-right .content-body { margin-left:0 !important; }
+  .content-header-right .content-body { margin-left:0 !important; max-width:100% !important; }
+  .content-header-right .content-h { font-size:clamp(22px,5.5vw,34px); }
 
   /* Difference */
   #difference { padding:48px 24px; }
@@ -343,8 +345,9 @@ footer {
   #final { padding:80px 24px; min-height:80vh; }
   .final-stmt { font-size:clamp(22px,6vw,36px); }
   .final-stmt-sub { font-size:16px; }
-  .final-wa { padding:12px 20px; font-size:9px; letter-spacing:0.2em; }
-  .final-cta-alt { font-size:9px; }
+  .final-wa { padding:12px 20px; font-size:9px; letter-spacing:0.16em; text-align:center; line-height:1.6; }
+  .final-cta-alt { font-size:9px; letter-spacing:0.16em; }
+  .final-note { font-size:9px; letter-spacing:0.12em; line-height:1.6; }
 
   /* Footer */
   footer { flex-direction:column; gap:20px; text-align:center; padding:32px 24px; }
@@ -418,14 +421,15 @@ footer {
     <div class="feeling-cap">
       <p class="feeling-eyebrow">What living here feels like</p>
       <p class="feeling-h">
-        Your health comes first.<br>
-        Everything else follows.
+        Three generations<br>
+        under one sky.<br>
+        Finally, close enough.
       </p>
       <div class="feeling-rule"></div>
       <p class="feeling-body">
-        The wellness programme runs on schedule. Your family is close — without the logistics of making them so. The forest is not a view from a window. It is where you walk every morning.
+        Your children grow up in the forest. Your parents are nearby — with the care they need already built in. And you are here, not somewhere else, not on the phone arranging it.
         <br><br>
-        You stop managing the environment. The environment starts giving back.
+        The family is together. Not for a holiday. Just for life.
       </p>
     </div>
   </div>
@@ -484,15 +488,15 @@ footer {
   </p>
   <div class="proof-grid">
     <a href="#section-wellness" class="proof-item reveal" style="text-decoration:none; display:block;">
-      <p class="proof-num">01</p>
-      <p class="proof-lbl">Wellness</p>
-      <p class="proof-desc">Clinical longevity science, structured into daily life. Not a spa. A programme with real protocols and measurable outcomes.</p>
+      <p class="proof-num">CLP</p>
+      <p class="proof-lbl">Clinique La Prairie · Wellness</p>
+      <p class="proof-desc">Clinique La Prairie Health Resort opening soon at Tri Vananda — ninety years of longevity science, structured into daily life. Not a spa. A clinical programme with real protocols.</p>
       <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
     </a>
     <a href="#section-community" class="proof-item reveal" style="text-decoration:none; display:block;">
-      <p class="proof-num">02</p>
-      <p class="proof-lbl">Community</p>
-      <p class="proof-desc">Families who have built at scale and want a place that feels right — not just looks right — to come home to. The service standard matches.</p>
+      <p class="proof-num">Trisara</p>
+      <p class="proof-lbl">Hospitality Experience · Community</p>
+      <p class="proof-desc">Our team brings over twenty years of experience from Trisara — one of Thailand's most respected names in private hospitality. That same standard now guides how we look after every family here.</p>
       <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
     </a>
     <a href="#section-nature" class="proof-item reveal" style="text-decoration:none; display:block;">
@@ -505,19 +509,19 @@ footer {
 </section>
 
 
-<!-- ═══ WELLNESS ═══ -->
+<!-- ═══ WELLNESS — CLINIQUE LA PRAIRIE ═══ -->
 <section class="content-section dark reveal" id="section-wellness">
   <div class="content-header">
-    <p class="label">Wellness · Longevity</p>
+    <p class="label">Wellness · Clinique La Prairie</p>
     <p class="content-h">
-      Your health here is not<br>an activity you schedule.<br>It is how you live.
+      Ninety years of longevity<br>science. Opening soon<br>at Tri Vananda.
     </p>
     <p class="content-body">
-      The wellness programme is clinical, not cosmetic. Real protocols. Measurable outcomes. Built on decades of longevity science.
+      Clinique La Prairie Health Resort is coming to Tri Vananda — bringing nine decades of clinical longevity science to the address. Real protocols. Measurable outcomes. Not a spa with good intentions.
       <br><br>
       Your body is treated with the same rigour you bring to everything you have built. The years ahead are not left to chance — they are planned for.
     </p>
-    <p class="content-sub" style="color:rgba(244,241,236,.28);">Clinical Longevity · Preventive Care · Measurable Outcomes</p>
+    <p class="content-sub" style="color:rgba(244,241,236,.28);">Clinique La Prairie · Opening Soon · Clinical Longevity</p>
   </div>
   <div class="img3-grid">
     <div class="img3-cell reveal" style="background-image:url('clp-01.jpg');"></div>
@@ -535,7 +539,7 @@ footer {
     <div class="img3-cell reveal" style="background-image:url('com-03.jpg');"></div>
   </div>
   <div class="content-header content-header-right" style="margin-bottom:0; margin-left:auto; margin-right:0; text-align:right;">
-    <p class="label" style="display:flex; justify-content:flex-end;">Community</p>
+    <p class="label" style="display:flex; justify-content:flex-end;">Community · Hospitality Experience</p>
     <p class="content-h">
       The people here were not<br>recruited. They arrived at<br>the same conclusion.
     </p>
@@ -544,9 +548,9 @@ footer {
       <br><br>
       The families here have built at scale. They understand long horizons, complexity, and the quiet difference between a place that looks right and one that actually feels right to come home to.
       <br><br>
-      The service holds the same standard. Everything works, nothing intrudes, and you are never asked to think about either.
+      Our team brings over twenty years of experience from Trisara — one of Thailand's most respected names in private hospitality. That background shapes the standard of care at Tri Vananda. Everything works, nothing intrudes, and you are never asked to think about either.
     </p>
-    <p class="content-sub" style="display:flex; justify-content:flex-end;">Multigenerational · Founder-Led · Built by Standard</p>
+    <p class="content-sub" style="display:flex; justify-content:flex-end;">Multigenerational · Trisara-Experienced Team · Founder-Led</p>
   </div>
 </section>
 
