@@ -171,7 +171,7 @@ a.proof-item:hover { background:rgba(35,63,47,.04); }
 .img3-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3px; height:46vh; min-height:300px; }
 .img3-grid.alt { grid-template-columns:1fr 1fr 2fr; }
 .img3-cell { background-size:cover; background-position:center; background-color:var(--paper-2); }
-.content-split { display:grid; grid-template-columns:1fr 1fr; gap:3px; height:72vh; min-height:420px; }
+.content-split { display:grid; grid-template-columns:1fr 1fr; gap:3px; min-height:72vh; }
 .content-split-text { display:flex; flex-direction:column; justify-content:center; padding:80px 64px; background:var(--paper-2); }
 .content-split-imgs { display:grid; grid-template-rows:1fr 1fr 1fr; gap:3px; }
 .content-split-imgs .img3-cell { min-height:120px; }
@@ -349,6 +349,9 @@ footer {
   .final-cta-alt { font-size:9px; letter-spacing:0.16em; }
   .final-note { font-size:9px; letter-spacing:0.12em; line-height:1.6; }
 
+  /* Map */
+  #map-section { height:360px; }
+
   /* Footer */
   footer { flex-direction:column; gap:20px; text-align:center; padding:32px 24px; }
   .footer-links { justify-content:center; gap:16px; flex-wrap:wrap; }
@@ -406,9 +409,9 @@ footer {
     </p>
     <div class="title-rule"></div>
     <p class="body-text">
-      Tri Vananda started with a father's illness and three sons who changed how their family lived — closer to nature, focused on prevention, together across generations. He recovered.
+      Tri Vananda was built by a family who learned — through their own experience — that how you live matters more than where you live. They chose nature, prevention, and togetherness across generations.
       <br><br>
-      They built this place so others could find the same thing. 232 acres of regrown forest, nine lakes, and a working farm — 15 minutes from Phuket airport, 15 minutes from the sea. A home, not a hotel.
+      Then they built a place so others could choose the same. 232 acres of regrown forest, nine lakes, and a working farm — 15 minutes from Phuket airport, 15 minutes from the sea. A home, not a hotel.
     </p>
   </div>
 </section>
@@ -440,9 +443,9 @@ footer {
 <div class="atm-break reveal-slow" style="background-image:url('landscape.jpg');">
   <div class="atm-text reveal">
     <p class="atm-quote">
-      "We didn't build this for guests.<br>We built it for our own family.<br>Then we opened it to others."
+      "A place where how you live<br>finally matches how you think."
     </p>
-    <p class="atm-attr">The Founders · Tri Vananda</p>
+    <p class="atm-attr">Tri Vananda · Phuket</p>
   </div>
 </div>
 
@@ -504,7 +507,7 @@ footer {
     <a href="#section-community" class="proof-item reveal" style="text-decoration:none; display:block;">
       <p class="proof-num">Trisara</p>
       <p class="proof-lbl">Hospitality Experience · Community</p>
-      <p class="proof-desc">Our team brings over twenty years of experience from Trisara — one of Thailand's most respected names in private hospitality. That same standard now guides how we look after every family here.</p>
+      <p class="proof-desc">Our service standard is inspired by over twenty years of Trisara — one of Thailand's most respected names in private hospitality. That same standard now guides how we look after every family here.</p>
       <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
     </a>
     <a href="#section-nature" class="proof-item reveal" style="text-decoration:none; display:block;">
@@ -530,6 +533,7 @@ footer {
       Your body is treated with the same rigour you bring to everything you have built. The years ahead are not left to chance — they are planned for.
     </p>
     <p class="content-sub" style="color:rgba(244,241,236,.28);">Clinique La Prairie · Opening Soon · Clinical Longevity</p>
+    <a href="https://www.cliniquelaprairie.com/destinations/thailand-phuket/" target="_blank" rel="noopener" style="display:inline-block; margin-top:20px; font-family:var(--sans); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:rgba(244,241,236,.55); text-decoration:none; border-bottom:0.5px solid rgba(244,241,236,.22); padding-bottom:2px; transition:color .3s, border-color .3s;" onmouseover="this.style.color='rgba(244,241,236,.85)';this.style.borderColor='rgba(244,241,236,.55)'" onmouseout="this.style.color='rgba(244,241,236,.55)';this.style.borderColor='rgba(244,241,236,.22)'">Visit Clinique La Prairie →</a>
   </div>
   <div class="img3-grid">
     <div class="img3-cell reveal" style="background-image:url('clp-01.jpg');"></div>
@@ -556,9 +560,12 @@ footer {
       <br><br>
       The families here have built at scale. They understand long horizons, complexity, and the quiet difference between a place that looks right and one that actually feels right to come home to.
       <br><br>
-      Our team brings over twenty years of experience from Trisara — one of Thailand's most respected names in private hospitality. That background shapes the standard of care at Tri Vananda. Everything works, nothing intrudes, and you are never asked to think about either.
+      Our service standard is inspired by over twenty years of Trisara — one of Thailand's most respected names in private hospitality. That same attention shapes how we care for every family at Tri Vananda. Everything works, nothing intrudes, and you are never asked to think about either.
     </p>
-    <p class="content-sub" style="display:flex; justify-content:flex-end;">Multigenerational · Trisara-Experienced Team · Founder-Led</p>
+    <p class="content-sub" style="display:flex; justify-content:flex-end;">Multigenerational · Trisara-Inspired Service · Founder-Led</p>
+    <div style="display:flex; justify-content:flex-end; margin-top:20px;">
+      <a href="https://www.trisara.com" target="_blank" rel="noopener" style="font-family:var(--sans); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--ink-3); text-decoration:none; border-bottom:0.5px solid var(--rule); padding-bottom:2px; transition:color .3s, border-color .3s;" onmouseover="this.style.color='var(--ink)';this.style.borderColor='var(--ink-3)'" onmouseout="this.style.color='var(--ink-3)';this.style.borderColor='var(--rule)'">Visit Trisara →</a>
+    </div>
   </div>
 </section>
 
@@ -579,6 +586,7 @@ footer {
         This is land your grandchildren will inherit — not just in title, but in memory. The forest they climbed. The lake they swam. The place that shaped how they see the world.
       </p>
       <p class="content-sub">15% Built · 85% Land · Nine Lakes · Farm-to-Home · Net Zero</p>
+      <a href="https://www.trivananda.com" target="_blank" rel="noopener" style="display:inline-block; margin-top:20px; font-family:var(--sans); font-size:10px; letter-spacing:0.24em; text-transform:uppercase; color:var(--ink-3); text-decoration:none; border-bottom:0.5px solid var(--rule); padding-bottom:2px; transition:color .3s, border-color .3s;" onmouseover="this.style.color='var(--ink)';this.style.borderColor='var(--ink-3)'" onmouseout="this.style.color='var(--ink-3)';this.style.borderColor='var(--rule)'">Visit Tri Vananda →</a>
     </div>
     <div class="content-split-imgs">
       <div class="img3-cell reveal" style="background-image:url('mood.jpg');"></div>
@@ -688,10 +696,20 @@ footer {
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Begin a private conversation on WhatsApp
       </a>
-      <a href="mailto:info@trivananda.com" class="final-cta-alt">Or write to us — info@trivananda.com</a>
+      <a href="tel:+66953719494" style="display:inline-block; margin-top:8px; font-family:var(--sans); font-size:clamp(14px,2vw,18px); letter-spacing:0.16em; color:rgba(244,241,236,.7); text-decoration:none; transition:color .3s;">+66 95 371 9494</a>
     </div>
     <p class="final-note">By referral or direct inquiry only · Thep Krasatti, Thalang District, Phuket 83110</p>
   </div>
+</section>
+
+
+<!-- ═══ MAP ═══ -->
+<section id="map-section" style="position:relative; width:100%; height:480px; background:var(--paper-2);">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.5!2d98.3173431!3d8.0394277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30503760eb2da311%3A0x2bb245687b450b4a!2sTri%20Vananda!5e0!3m2!1sen!2sth!4v1711800000000!5m2!1sen!2sth"
+    width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <a href="https://www.google.com/maps/place/Tri+Vananda/@8.0385702,98.3197955,15z/data=!4m6!3m5!1s0x30503760eb2da311:0x2bb245687b450b4a!8m2!3d8.0394277!4d98.3173431!16s%2Fg%2F11p0wbvrqd?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" style="position:absolute; bottom:20px; left:24px; z-index:2; font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink); background:rgba(244,241,236,.92); padding:10px 18px; text-decoration:none; border-radius:2px; transition:background .3s;">Open in Google Maps →</a>
 </section>
 
 
