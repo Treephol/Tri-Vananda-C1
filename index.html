@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tri Vananda — Phuket</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:     #181614;
+  --ink-2:   #3d3a37;
+  --ink-3:   #6e6a65;
+  --ink-4:   #9e9a95;
+  --paper:   #f4f1ec;
+  --paper-2: #ece8e1;
+  --rule:    #d4cfc8;
+  --accent:  #233f2f;
+  --grn:     #233f2f;
+  --grn-deep:#162a1f;
+  --serif:   'EB Garamond', Georgia, serif;
+  --display: 'Playfair Display', 'Times New Roman', serif;
+  --sans:    'Jost', 'Helvetica Neue', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(16px); transition:opacity .9s ease, transform .9s ease; }
+.reveal.on { opacity:1; transform:none; }
+.reveal-slow { opacity:0; transition:opacity 1.6s ease; }
+.reveal-slow.on { opacity:1; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:22px 60px; background:var(--grn);
+  border-bottom:0.5px solid transparent; transition:background .4s, border-color .4s;
+}
+nav.light { background:var(--paper); border-color:var(--rule); }
+.nav-logo { height:80px; width:auto; display:block; filter:brightness(0) invert(1); transition:filter .4s; }
+nav.light .nav-logo { filter:brightness(0) invert(0.18); }
+.nav-link {
+  font-family:var(--sans); font-size:10px; font-weight:400;
+  letter-spacing:0.24em; text-transform:uppercase;
+  color:rgba(244,241,236,.55); text-decoration:none;
+  border-bottom:0.5px solid rgba(244,241,236,.22); padding-bottom:2px;
+  transition:color .3s, border-color .3s;
+}
+.nav-link:hover { color:rgba(244,241,236,.9); border-color:rgba(244,241,236,.55); }
+nav.light .nav-link { color:var(--ink-3); border-color:var(--rule); }
+nav.light .nav-link:hover { color:var(--ink); border-color:var(--ink-3); }
+
+/* ── HERO ── */
+#hero {
+  position:relative; min-height:100vh;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:0 60px 80px; background:var(--grn); overflow:hidden;
+}
+#hero-img { position:absolute; inset:0; background-size:cover; background-position:center 40%; opacity:.6; }
+#hero-grad { position:absolute; inset:0; background:linear-gradient(to top,rgba(12,24,16,.84) 0%,rgba(12,24,16,.35) 55%,rgba(12,24,16,.18) 100%); }
+.hero-content { position:relative; z-index:1; max-width:700px; }
+.hero-eye { font-family:var(--sans); font-size:10px; letter-spacing:0.32em; text-transform:uppercase; color:rgba(244,241,236,.38); margin-bottom:22px; }
+.hero-h1 {
+  font-family:var(--display); font-size:clamp(36px,6.8vw,72px);
+  font-weight:400; font-style:italic; line-height:1.06;
+  letter-spacing:-0.018em; color:var(--paper); margin-bottom:24px;
+}
+.hero-sub { font-family:var(--serif); font-size:18px; font-style:italic; color:rgba(244,241,236,.42); margin-bottom:48px; letter-spacing:.04em; }
+.hero-meta { display:flex; align-items:center; gap:44px; flex-wrap:wrap; }
+.hero-loc { font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(244,241,236,.28); }
+.hero-cta {
+  font-family:var(--sans); font-size:10px; letter-spacing:0.24em;
+  text-transform:uppercase; color:var(--paper); text-decoration:none;
+  border-bottom:0.5px solid rgba(244,241,236,.35); padding-bottom:2px; transition:border-color .3s;
+}
+.hero-cta:hover { border-color:rgba(244,241,236,.75); }
+.hero-note { font-family:var(--sans); font-size:10px; color:rgba(244,241,236,.18); margin-top:18px; letter-spacing:.1em; }
+
+/* ── SECTIONS ── */
+.sec { padding:100px 60px; }
+.sec-alt { background:var(--paper-2); }
+.label { font-family:var(--sans); font-size:10px; letter-spacing:0.34em; text-transform:uppercase; color:var(--ink-4); margin-bottom:28px; }
+.narrow { max-width:520px; }
+.title-rule { width:36px; height:0.5px; background:var(--ink-3); margin:20px 0 24px; }
+
+.blockquote {
+  font-family:var(--display); font-size:clamp(30px,4vw,50px);
+  font-weight:400; font-style:italic; line-height:1.2;
+  color:var(--ink); margin-bottom:32px; letter-spacing:-0.015em;
+}
+.body-text { font-family:var(--serif); font-size:18px; line-height:1.78; color:var(--ink-2); letter-spacing:.005em; }
+.role-text {
+  font-family:var(--serif); font-size:clamp(22px,2.4vw,32px);
+  font-weight:400; line-height:1.7; color:var(--ink); max-width:640px;
+}
+
+/* ── FEELING ── */
+#feeling { padding:0; }
+.feeling-grid { display:grid; grid-template-columns:5fr 4fr; min-height:72vh; }
+.feeling-img { background-size:cover; background-position:center; }
+.feeling-cap { background:var(--grn); display:flex; flex-direction:column; justify-content:center; padding:80px 64px; }
+.feeling-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:.34em; text-transform:uppercase; color:rgba(244,241,236,.28); margin-bottom:28px; }
+.feeling-h {
+  font-family:var(--display); font-size:clamp(24px,3vw,40px);
+  font-weight:400; font-style:italic; line-height:1.38;
+  color:var(--paper); margin-bottom:24px; letter-spacing:-0.01em;
+}
+.feeling-body { font-family:var(--serif); font-size:18px; line-height:1.78; color:rgba(244,241,236,.52); }
+.feeling-rule { width:28px; height:0.5px; background:rgba(244,241,236,.18); margin:24px 0; }
+
+/* ── ATMOSPHERIC BREAK ── */
+.atm-break {
+  width:100%; height:72vh; min-height:420px;
+  background-size:cover; background-position:center;
+  position:relative; display:flex; align-items:flex-end; padding:52px 60px;
+}
+.atm-break::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(10,18,12,.7) 0%,transparent 55%); }
+.atm-text { position:relative; z-index:1; }
+.atm-quote {
+  font-family:var(--display); font-size:clamp(22px,2.8vw,36px);
+  font-weight:400; font-style:italic; color:rgba(244,241,236,.78);
+  letter-spacing:-0.01em; line-height:1.38; max-width:520px;
+}
+.atm-attr { font-family:var(--sans); font-size:10px; letter-spacing:.26em; text-transform:uppercase; color:rgba(244,241,236,.28); margin-top:14px; }
+
+/* ── PROOF ── */
+.proof-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:52px; border-top:0.5px solid var(--rule); }
+.proof-item { padding:40px 48px 40px 0; border-right:0.5px solid var(--rule); transition:background .25s; }
+a.proof-item:hover { background:rgba(35,63,47,.04); }
+.proof-item:nth-child(2) { padding-left:48px; }
+.proof-item:last-child { border-right:none; padding-left:48px; }
+.proof-num { font-family:var(--display); font-size:50px; font-weight:400; color:var(--ink); line-height:1; margin-bottom:10px; letter-spacing:-0.02em; }
+.proof-lbl { font-family:var(--sans); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.proof-desc { font-family:var(--serif); font-size:17px; line-height:1.75; color:var(--ink-2); }
+
+/* ── WHO GRID (reused for villas) ── */
+.who-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; margin-top:52px; }
+.who-h {
+  font-family:var(--display); font-size:clamp(22px,2.6vw,34px);
+  font-weight:400; font-style:italic; line-height:1.42;
+  color:var(--ink); margin-bottom:28px; letter-spacing:-0.008em;
+}
+.who-body { font-family:var(--serif); font-size:17px; line-height:1.75; color:var(--ink-2); }
+.who-list { list-style:none; }
+.who-list li {
+  font-family:var(--serif); font-size:17px; color:var(--ink-2);
+  padding:13px 0; border-bottom:0.5px solid var(--rule);
+  display:flex; gap:18px; line-height:1.65;
+}
+.who-list li:first-child { border-top:0.5px solid var(--rule); }
+.who-list li::before { content:'—'; color:var(--rule); flex-shrink:0; }
+
+/* ── CONTENT SECTIONS ── */
+.content-section { padding:100px 60px; }
+.content-section.dark { background:var(--grn-deep); }
+.content-section.dark .label { color:rgba(244,241,236,.28); }
+.content-section.dark .content-h { color:var(--paper); }
+.content-section.dark .content-body { color:rgba(244,241,236,.55); }
+.content-section.dark .content-sub { color:rgba(244,241,236,.28); }
+.content-header { max-width:640px; margin-bottom:64px; }
+.content-h {
+  font-family:var(--display); font-size:clamp(26px,3.2vw,44px);
+  font-weight:400; font-style:italic; line-height:1.22;
+  color:var(--ink); margin-bottom:24px; letter-spacing:-0.015em;
+}
+.content-body { font-family:var(--serif); font-size:18px; line-height:1.78; color:var(--ink-2); }
+.content-sub { font-family:var(--sans); font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--ink-4); margin-top:20px; }
+.img3-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3px; height:46vh; min-height:300px; }
+.img3-grid.alt { grid-template-columns:1fr 1fr 2fr; }
+.img3-cell { background-size:cover; background-position:center; background-color:var(--paper-2); }
+.content-split { display:grid; grid-template-columns:1fr 1fr; gap:3px; height:72vh; min-height:420px; }
+.content-split-text { display:flex; flex-direction:column; justify-content:center; padding:80px 64px; background:var(--paper-2); }
+.content-split-imgs { display:grid; grid-template-rows:1fr 1fr 1fr; gap:3px; }
+.content-split-imgs .img3-cell { min-height:120px; }
+
+/* ── DIFFERENCE ── */
+#difference { background:var(--grn-deep); padding:56px 60px; position:relative; overflow:hidden; }
+#difference::before { content:''; position:absolute; top:-40%; right:-15%; width:600px; height:600px; border-radius:50%; border:0.5px solid rgba(244,241,236,.04); pointer-events:none; }
+#difference .label { color:rgba(244,241,236,.28); }
+.diff-intro {
+  font-family:var(--display); font-size:clamp(20px,2.2vw,30px);
+  font-weight:400; font-style:italic; color:rgba(244,241,236,.45);
+  max-width:440px; margin-bottom:56px; line-height:1.48; letter-spacing:-0.008em;
+}
+.diff-list { list-style:none; max-width:680px; }
+.diff-list li {
+  font-family:var(--serif); font-size:18px;
+  font-weight:400; line-height:1.72;
+  color:var(--paper); padding:14px 0;
+  border-bottom:0.5px solid rgba(244,241,236,.08);
+  display:flex; gap:28px; align-items:flex-start;
+  letter-spacing:.002em; transition:opacity .3s; opacity:.82;
+}
+.diff-list li:first-child { border-top:0.5px solid rgba(244,241,236,.08); }
+.diff-list li:hover { opacity:1; }
+.diff-n { font-family:var(--sans); font-size:10px; letter-spacing:.22em; color:rgba(244,241,236,.18); padding-top:5px; flex-shrink:0; min-width:18px; }
+
+/* ── READING ── */
+.reading-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--rule); border:0.5px solid var(--rule); margin-top:52px; }
+.reading-card { background:var(--paper); text-decoration:none; display:block; transition:background .3s; }
+.reading-card:hover { background:#fff; }
+.reading-card:hover .reading-arrow { transform:translateX(4px); opacity:1; }
+.reading-card-inner { padding:40px 36px; display:flex; flex-direction:column; gap:24px; min-height:320px; }
+.reading-meta { display:flex; align-items:center; justify-content:space-between; }
+.reading-tag { font-family:var(--display); font-size:clamp(28px,3vw,44px); font-weight:400; font-style:italic; color:var(--rule); line-height:1; letter-spacing:-0.03em; }
+.reading-type { font-family:var(--sans); font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--ink-4); border:0.5px solid var(--rule); padding:4px 9px; }
+.reading-title { font-family:var(--display); font-size:clamp(19px,1.8vw,26px); font-weight:400; font-style:italic; line-height:1.3; color:var(--ink); margin-bottom:10px; letter-spacing:-0.01em; }
+.reading-desc { font-family:var(--serif); font-size:15px; line-height:1.75; color:var(--ink-3); }
+.reading-footer { display:flex; align-items:center; justify-content:space-between; padding-top:20px; border-top:0.5px solid var(--rule); margin-top:auto; }
+.reading-cta { font-family:var(--sans); font-size:10px; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent); }
+.reading-arrow { font-family:var(--sans); font-size:13px; color:var(--accent); opacity:.3; transition:transform .3s, opacity .3s; }
+
+/* ── FINAL ── */
+#final {
+  position:relative; min-height:90vh;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  background:var(--grn-deep); overflow:hidden; padding:100px 60px;
+}
+#final-bg { position:absolute; inset:0; background-size:cover; background-position:center; opacity:.28; }
+#final-grad { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(10,18,12,.55) 0%,rgba(10,18,12,.85) 100%); }
+.final-content { position:relative; z-index:1; text-align:center; max-width:780px; }
+.final-eyebrow { font-family:var(--sans); font-size:10px; letter-spacing:.34em; text-transform:uppercase; color:rgba(244,241,236,.22); margin-bottom:32px; }
+.final-stmt {
+  font-family:var(--display); font-size:clamp(26px,3.4vw,50px);
+  font-weight:400; font-style:italic; line-height:1.28;
+  color:var(--paper); margin-bottom:14px; letter-spacing:-0.015em;
+}
+.final-stmt-sub { font-family:var(--serif); font-size:19px; font-style:italic; color:rgba(244,241,236,.38); margin-bottom:56px; line-height:1.65; }
+.final-ctas { display:flex; flex-direction:column; align-items:center; gap:18px; }
+.final-wa {
+  display:inline-flex; align-items:center; gap:12px;
+  background:rgba(37,211,102,.12); border:0.5px solid rgba(37,211,102,.38);
+  padding:14px 32px; border-radius:2px;
+  font-family:var(--sans); font-size:10px; letter-spacing:0.26em; text-transform:uppercase;
+  color:rgba(244,241,236,.88); text-decoration:none; transition:background .3s, border-color .3s;
+}
+.final-wa:hover { background:rgba(37,211,102,.22); border-color:rgba(37,211,102,.6); }
+.final-wa svg { width:15px; height:15px; fill:rgba(37,211,102,.85); }
+.final-cta-alt {
+  font-family:var(--sans); font-size:10px; letter-spacing:0.26em;
+  text-transform:uppercase; color:rgba(244,241,236,.28); text-decoration:none;
+  border-bottom:0.5px solid rgba(244,241,236,.12); padding-bottom:2px;
+  transition:color .3s, border-color .3s;
+}
+.final-cta-alt:hover { color:rgba(244,241,236,.55); border-color:rgba(244,241,236,.3); }
+.final-note { margin-top:44px; font-family:var(--sans); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:rgba(244,241,236,.13); }
+
+footer {
+  padding:44px 60px; border-top:0.5px solid var(--rule);
+  display:flex; justify-content:space-between; align-items:center;
+  background:var(--paper); flex-wrap:wrap; gap:28px;
+}
+.footer-l { font-family:var(--serif); font-size:14px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink-3); opacity:.6; }
+.footer-r { font-family:var(--sans); font-size:10px; color:var(--ink-4); letter-spacing:.12em; text-align:right; line-height:1.7; }
+.footer-links { display:flex; gap:32px; align-items:center; flex-wrap:wrap; }
+.footer-link {
+  font-family:var(--sans); font-size:9px; letter-spacing:0.22em;
+  text-transform:uppercase; color:var(--ink-4); text-decoration:none;
+  border-bottom:0.5px solid transparent; padding-bottom:1px;
+  transition:color .3s, border-color .3s;
+}
+.footer-link:hover { color:var(--ink-2); border-color:var(--rule); }
+
+/* ── VILLA SPECS ROW ── */
+.villa-specs { margin-top:52px; padding-top:36px; border-top:0.5px solid var(--rule); display:flex; gap:64px; flex-wrap:wrap; }
+
+/* ── MOBILE ── */
+@media (max-width:768px) {
+  /* Nav */
+  nav { padding:14px 20px; }
+  .nav-logo { height:48px; }
+  .nav-link { font-size:9px; letter-spacing:0.16em; }
+
+  /* Hero */
+  #hero { padding:0 24px 56px; min-height:90vh; }
+  .hero-h1 { font-size:clamp(30px,8vw,52px); }
+  .hero-eye { font-size:9px; letter-spacing:0.24em; margin-bottom:16px; }
+  .hero-sub { font-size:16px; margin-bottom:32px; }
+  .hero-meta { gap:20px; flex-direction:column; align-items:flex-start; }
+  .hero-note { font-size:9px; }
+
+  /* Sections */
+  .sec { padding:64px 24px; }
+  .blockquote { font-size:clamp(24px,6.5vw,36px); }
+  .body-text { font-size:16px; }
+  .role-text { font-size:clamp(18px,4.5vw,24px); }
+
+  /* Feeling */
+  .feeling-grid { grid-template-columns:1fr; min-height:auto; }
+  .feeling-img { height:56vw; min-height:240px; }
+  .feeling-cap { padding:48px 24px; }
+  .feeling-h { font-size:clamp(22px,5.5vw,30px); }
+  .feeling-body { font-size:16px; }
+
+  /* Atmospheric break */
+  .atm-break { padding:40px 24px; height:56vh; min-height:320px; }
+  .atm-quote { font-size:clamp(20px,5vw,28px); }
+
+  /* Proof grid */
+  .proof-grid { grid-template-columns:1fr; border-top:none; }
+  .proof-item { border-right:none; border-top:0.5px solid var(--rule); padding:28px 0 !important; }
+  .proof-num { font-size:36px; }
+  .proof-desc { font-size:15px; }
+
+  /* Who / villas grid */
+  .who-grid { grid-template-columns:1fr; gap:32px; }
+  .who-h { font-size:clamp(20px,5.5vw,28px); }
+  .who-body { font-size:15px; }
+  .villa-specs { flex-direction:column; gap:24px; }
+
+  /* Content sections */
+  .content-section { padding:64px 24px; }
+  .content-header { margin-bottom:40px; }
+  .content-h { font-size:clamp(22px,5.5vw,34px); }
+  .content-body { font-size:16px; }
+  .img3-grid, .img3-grid.alt { grid-template-columns:1fr; height:auto; }
+  .img3-cell { height:56vw; min-height:200px; }
+  .content-split { grid-template-columns:1fr; height:auto; }
+  .content-split-text { padding:48px 24px; }
+  .content-split-imgs { grid-template-rows:repeat(3,48vw); }
+
+  /* Community right-aligned section → left on mobile */
+  .content-header-right { text-align:left !important; margin-left:0 !important; margin-right:0 !important; }
+  .content-header-right .label,
+  .content-header-right .content-sub { justify-content:flex-start !important; }
+  .content-header-right .content-body { margin-left:0 !important; }
+
+  /* Difference */
+  #difference { padding:48px 24px; }
+  .diff-intro { font-size:clamp(18px,4.5vw,24px); }
+  .diff-list li { font-size:16px; gap:16px; padding:12px 0; }
+
+  /* Reading */
+  .reading-grid { grid-template-columns:1fr; }
+  .reading-card-inner { padding:28px 20px; min-height:auto; }
+  .reading-title { font-size:clamp(18px,4.5vw,22px); }
+  .reading-desc { font-size:14px; }
+
+  /* Final */
+  #final { padding:80px 24px; min-height:80vh; }
+  .final-stmt { font-size:clamp(22px,6vw,36px); }
+  .final-stmt-sub { font-size:16px; }
+  .final-wa { padding:12px 20px; font-size:9px; letter-spacing:0.2em; }
+  .final-cta-alt { font-size:9px; }
+
+  /* Footer */
+  footer { flex-direction:column; gap:20px; text-align:center; padding:32px 24px; }
+  .footer-links { justify-content:center; gap:16px; flex-wrap:wrap; }
+  .footer-r { text-align:center; }
+}
+
+/* ── SMALL MOBILE ── */
+@media (max-width:420px) {
+  #hero { padding:0 18px 48px; }
+  .sec { padding:52px 18px; }
+  .content-section { padding:52px 18px; }
+  #difference { padding:40px 18px; }
+  #final { padding:64px 18px; }
+  nav { padding:12px 16px; }
+  .nav-logo { height:40px; }
+  footer { padding:28px 18px; }
+  .feeling-cap { padding:40px 18px; }
+  .content-split-text { padding:40px 18px; }
+  .reading-card-inner { padding:24px 16px; }
+  .hero-h1 { font-size:clamp(26px,7.5vw,40px); }
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <img src="logo-white.png" alt="Tri Vananda" class="nav-logo" id="nav-logo">
+  <a href="#final" class="nav-link">Private Introduction</a>
+</nav>
+
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div id="hero-img" style="background-image:url('hero.jpg');"></div>
+  <div id="hero-grad"></div>
+  <div class="hero-content reveal" id="hero-content">
+    <p class="hero-eye">Tri Vananda · Phuket · 232 Acres</p>
+    <h1 class="hero-h1">WHERE YOUR TIME<br>STARTS BEHAVING<br>DIFFERENTLY</h1>
+    <p class="hero-sub">A wellness community in Phuket, built for families who think long-term.</p>
+    <div class="hero-meta">
+      <span class="hero-loc">A limited number of private residences</span>
+      <a href="#final" class="hero-cta">Request a private introduction</a>
+    </div>
+    <p class="hero-note">By referral or direct inquiry only</p>
+  </div>
+</section>
+
+
+<!-- ═══ THE FOUNDATION ═══ -->
+<section class="sec reveal">
+  <div class="narrow">
+    <p class="label">The foundation</p>
+    <p class="blockquote">
+      Built from a family's own<br>journey back to health.
+    </p>
+    <div class="title-rule"></div>
+    <p class="body-text">
+      Tri Vananda started with a father's illness and three sons who changed how their family lived — closer to nature, focused on prevention, together across generations. He recovered.
+      <br><br>
+      They built this place so others could find the same thing. 232 acres of regrown forest, nine lakes, and a working farm — 15 minutes from Phuket airport, 15 minutes from the sea. A home, not a hotel. A community, not a compound.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══ THE STANDARD IN PRACTICE ═══ -->
+<section id="feeling" class="reveal">
+  <div class="feeling-grid">
+    <div class="feeling-img" style="background-image:url('circle.jpg');"></div>
+    <div class="feeling-cap">
+      <p class="feeling-eyebrow">What living here feels like</p>
+      <p class="feeling-h">
+        Your health comes first.<br>
+        Everything else follows.
+      </p>
+      <div class="feeling-rule"></div>
+      <p class="feeling-body">
+        The wellness programme runs on schedule. Your family is close — without the logistics of making them so. The forest is not a view from a window. It is where you walk every morning.
+        <br><br>
+        You stop managing the environment. The environment starts giving back.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ ATMOSPHERIC BREAK ═══ -->
+<div class="atm-break reveal-slow" style="background-image:url('landscape.jpg');">
+  <div class="atm-text reveal">
+    <p class="atm-quote">
+      "We didn't build this for guests.<br>We built it for our own family.<br>Then we opened it to others."
+    </p>
+    <p class="atm-attr">The Founders · Tri Vananda</p>
+  </div>
+</div>
+
+
+<!-- ═══ RESIDENTIAL VILLAS ═══ -->
+<section class="sec reveal">
+  <p class="label">The Residences</p>
+  <div class="who-grid">
+    <div>
+      <p class="who-h">
+        Not a property in a portfolio.<br>
+        A place your family<br>comes back to.
+      </p>
+      <p class="who-body">
+        Each home sits inside the forest — not next to it. The land does not stop at the terrace. It continues into the morning walk, the children's afternoon, the evening that needs no plan.
+        <br><br>
+        Two to five bedrooms. Timber, stone, glass — materials that hold their character over decades. The architecture is quiet. So is everything here that works the way it should.
+      </p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:3px;">
+      <div style="flex:1; background-image:url('villa-01.jpg'); background-size:cover; background-position:center; background-color:var(--paper-2); min-height:200px;" class="reveal"></div>
+      <div style="flex:1; background-image:url('villa-02.jpg'); background-size:cover; background-position:center; background-color:var(--paper-2); min-height:200px;" class="reveal"></div>
+    </div>
+  </div>
+  <div class="villa-specs">
+    <div>
+      <p class="proof-lbl">Typologies</p>
+      <p class="body-text" style="font-size:16px;">2–5 Bedroom Private Villas</p>
+    </div>
+    <div>
+      <p class="proof-lbl">Availability</p>
+      <p class="body-text" style="font-size:16px;">Limited · By private inquiry</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ THREE PILLARS ═══ -->
+<section class="sec sec-alt reveal">
+  <p class="label">Three pillars. One address.</p>
+  <p class="role-text" style="margin-bottom:0;">
+    Wellness, community, and nature. Each one shapes how this place works. Together they hold it steady, year after year.
+  </p>
+  <div class="proof-grid">
+    <a href="#section-wellness" class="proof-item reveal" style="text-decoration:none; display:block;">
+      <p class="proof-num">01</p>
+      <p class="proof-lbl">Wellness</p>
+      <p class="proof-desc">Clinical longevity science, structured into daily life. Not a spa. A programme with real protocols and measurable outcomes.</p>
+      <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
+    </a>
+    <a href="#section-community" class="proof-item reveal" style="text-decoration:none; display:block;">
+      <p class="proof-num">02</p>
+      <p class="proof-lbl">Community</p>
+      <p class="proof-desc">Families who have built at scale and want a place that feels right — not just looks right — to come home to. The service standard matches.</p>
+      <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
+    </a>
+    <a href="#section-nature" class="proof-item reveal" style="text-decoration:none; display:block;">
+      <p class="proof-num">85%</p>
+      <p class="proof-lbl">Nature</p>
+      <p class="proof-desc">Only 15% of 232 acres is built on. The rest — nine lakes, regrown forest, working farm — is not amenity. It is the foundation everything else rests on.</p>
+      <p style="font-family:var(--sans);font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:20px;opacity:.7;">Read more ↓</p>
+    </a>
+  </div>
+</section>
+
+
+<!-- ═══ WELLNESS ═══ -->
+<section class="content-section dark reveal" id="section-wellness">
+  <div class="content-header">
+    <p class="label">Wellness · Longevity</p>
+    <p class="content-h">
+      Your health here is not<br>an activity you schedule.<br>It is how you live.
+    </p>
+    <p class="content-body">
+      The wellness programme is clinical, not cosmetic. Real protocols. Measurable outcomes. Built on decades of longevity science.
+      <br><br>
+      Your body is treated with the same rigour you bring to everything you have built. The years ahead are not left to chance — they are planned for.
+    </p>
+    <p class="content-sub" style="color:rgba(244,241,236,.28);">Clinical Longevity · Preventive Care · Measurable Outcomes</p>
+  </div>
+  <div class="img3-grid">
+    <div class="img3-cell reveal" style="background-image:url('clp-01.jpg');"></div>
+    <div class="img3-cell reveal" style="background-image:url('clp-02.jpg');"></div>
+    <div class="img3-cell reveal" style="background-image:url('clp-03.jpg');"></div>
+  </div>
+</section>
+
+
+<!-- ═══ COMMUNITY ═══ -->
+<section class="content-section reveal" id="section-community">
+  <div class="img3-grid alt" style="margin-bottom:64px;">
+    <div class="img3-cell reveal" style="background-image:url('com-01.jpg');"></div>
+    <div class="img3-cell reveal" style="background-image:url('com-02.jpg');"></div>
+    <div class="img3-cell reveal" style="background-image:url('com-03.jpg');"></div>
+  </div>
+  <div class="content-header content-header-right" style="margin-bottom:0; margin-left:auto; margin-right:0; text-align:right;">
+    <p class="label" style="display:flex; justify-content:flex-end;">Community</p>
+    <p class="content-h">
+      The people here were not<br>recruited. They arrived at<br>the same conclusion.
+    </p>
+    <p class="content-body" style="margin-left:auto;">
+      This kind of community does not form by open invitation. It forms because the right conditions attract a certain kind of family — and the overlap, when it happens, needs little explanation.
+      <br><br>
+      The families here have built at scale. They understand long horizons, complexity, and the quiet difference between a place that looks right and one that actually feels right to come home to.
+      <br><br>
+      The service holds the same standard. Everything works, nothing intrudes, and you are never asked to think about either.
+    </p>
+    <p class="content-sub" style="display:flex; justify-content:flex-end;">Multigenerational · Founder-Led · Built by Standard</p>
+  </div>
+</section>
+
+
+<!-- ═══ NATURE & REGENERATIVE FARMING ═══ -->
+<section class="content-section sec-alt reveal" id="section-nature">
+  <div class="content-split">
+    <div class="content-split-text">
+      <p class="label">Nature &amp; Regenerative Farming</p>
+      <p class="content-h">
+        232 acres is not a setting.<br>It is the foundation<br>of this place.
+      </p>
+      <p class="content-body">
+        Only 15% of the land is built on. The rest — nine lakes, regrown forest, a working regenerative farm — is what you wake up inside every morning.
+        <br><br>
+        Soil that improves rather than depletes. A farm that produces more than it consumes. Nature here was not installed. It was restored — returned to what it already knew how to be.
+      </p>
+      <p class="content-sub">15% Built · 85% Land · Nine Lakes · Farm-to-Home · Net Zero</p>
+    </div>
+    <div class="content-split-imgs">
+      <div class="img3-cell reveal" style="background-image:url('mood.jpg');"></div>
+      <div class="img3-cell reveal" style="background-image:url('landscape.jpg');"></div>
+      <div class="img3-cell reveal" style="background-image:url('hero.jpg');"></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ THE DIFFERENCE ═══ -->
+<section id="difference">
+  <p class="label reveal">What this means for your family</p>
+  <p class="diff-intro reveal">
+    The amenities exist elsewhere.<br>
+    What cannot be replicated is what this land does<br>
+    to the people who live inside it — over time.
+  </p>
+  <ul class="diff-list">
+    <li class="reveal"><span class="diff-n">01</span>Your children grow up inside nature — the forest as their reference point, the lake as their morning, the land as their normal.</li>
+    <li class="reveal"><span class="diff-n">02</span>Your parents age in the same address — with clinical care built in, family nearby, and the dignity that comes from both.</li>
+    <li class="reveal"><span class="diff-n">03</span>Your health is not a calendar item. Here, it is the foundation — and everything else is planned around it.</li>
+    <li class="reveal"><span class="diff-n">04</span>The people around you do not require vetting. The conditions of this place shaped the community. That, quietly, was the selection.</li>
+    <li class="reveal"><span class="diff-n">05</span>What you build here is not a property in a portfolio. It is a home that deepens in meaning as your family grows into it.</li>
+  </ul>
+</section>
+
+
+<!-- ═══ FURTHER READING ═══ -->
+<section class="sec reveal">
+  <p class="label">Further reading</p>
+  <p class="blockquote" style="max-width:500px;">
+    For those who read<br>before they decide.
+  </p>
+  <div class="reading-grid">
+
+    <a href="https://treephol.github.io/Tri-Vananda/editorial.html" target="_blank" rel="noopener" class="reading-card reveal">
+      <div class="reading-card-inner">
+        <div class="reading-meta">
+          <span class="reading-tag">01</span>
+          <span class="reading-type">Editorial</span>
+        </div>
+        <div>
+          <p class="reading-title">Private Editorial</p>
+          <p class="reading-desc">An honest account of Tri Vananda — the land, the decisions behind it, and the logic of the whole. Written for the people it was built for.</p>
+        </div>
+        <div class="reading-footer">
+          <span class="reading-cta">Read the editorial</span>
+          <span class="reading-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://treephol.github.io/Tri-Vananda/founders-memo.html" target="_blank" rel="noopener" class="reading-card reveal">
+      <div class="reading-card-inner">
+        <div class="reading-meta">
+          <span class="reading-tag">02</span>
+          <span class="reading-type">Founder</span>
+        </div>
+        <div>
+          <p class="reading-title">Founder's Memo</p>
+          <p class="reading-desc">A letter from the family. What they were trying to solve, what standard they held it to, and why they built it this way.</p>
+        </div>
+        <div class="reading-footer">
+          <span class="reading-cta">Read the memo</span>
+          <span class="reading-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://treephol.github.io/Tri-Vananda/coherence-map.html" target="_blank" rel="noopener" class="reading-card reveal">
+      <div class="reading-card-inner">
+        <div class="reading-meta">
+          <span class="reading-tag">03</span>
+          <span class="reading-type">Framework</span>
+        </div>
+        <div>
+          <p class="reading-title">Coherence Map</p>
+          <p class="reading-desc">How 232 acres and three pillars work as one system. The spatial and operational logic, set out plainly.</p>
+        </div>
+        <div class="reading-footer">
+          <span class="reading-cta">Explore the map</span>
+          <span class="reading-arrow">→</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ═══ FINAL CTA ═══ -->
+<section id="final">
+  <div id="final-bg" style="background-image:url('clp.jpg');"></div>
+  <div id="final-grad"></div>
+  <div class="final-content reveal">
+    <p class="final-eyebrow">Tri Vananda · Phuket</p>
+    <p class="final-stmt">
+      Come and see what it feels like.
+    </p>
+    <p class="final-stmt-sub">
+      A private visit takes half a day.<br>
+      Start with a message. We will handle the rest.
+    </p>
+    <div class="final-ctas">
+      <a href="https://bit.ly/TriVananda_WA" target="_blank" class="final-wa">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Begin a private conversation on WhatsApp
+      </a>
+      <a href="mailto:info@trivananda.com" class="final-cta-alt">Or write to us — info@trivananda.com</a>
+    </div>
+    <p class="final-note">By referral or direct inquiry only · Thep Krasatti, Thalang District, Phuket 83110</p>
+  </div>
+</section>
+
+
+<footer>
+  <div class="footer-links">
+    <a href="https://www.trivananda.com" target="_blank" rel="noopener" class="footer-link">Tri Vananda</a>
+    <a href="https://www.montarahospitality.com" target="_blank" rel="noopener" class="footer-link">Montara Hospitality Group</a>
+  </div>
+  <div class="footer-r">
+    <div>Thep Krasatti, Thalang District, Phuket 83110</div>
+    <div style="margin-top:8px;"><a href="mailto:info@trivananda.com" style="color:var(--ink-4);text-decoration:none;letter-spacing:.12em;">info@trivananda.com</a></div>
+    <div style="margin-top:2px;"><a href="tel:+66953719494" style="color:var(--ink-4);text-decoration:none;letter-spacing:.12em;">+66 95 371 9494</a></div>
+    <div style="margin-top:8px;opacity:.5;">Build, Belong &amp; Bloom</div>
+  </div>
+</footer>
+
+<script>
+setTimeout(() => document.getElementById('hero-content').classList.add('on'), 150);
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      const siblings = [...e.target.parentElement.querySelectorAll('.reveal:not(.on)')];
+      const idx = siblings.indexOf(e.target);
+      setTimeout(() => e.target.classList.add('on'), idx * 70);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+const io2 = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) { e.target.classList.add('on'); io2.unobserve(e.target); }
+  });
+}, { threshold: 0.05 });
+document.querySelectorAll('.reveal:not(#hero-content)').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal-slow').forEach(el => io2.observe(el));
+const nav = document.getElementById('nav');
+const heroEl = document.getElementById('hero');
+window.addEventListener('scroll', () => {
+  const isLight = window.scrollY > heroEl.offsetHeight * 0.88;
+  nav.classList.toggle('light', isLight);
+  document.getElementById('nav-logo').style.filter = isLight
+    ? 'brightness(0) invert(0.25)'
+    : 'brightness(0) invert(1)';
+}, { passive: true });
+</script>
+</body>
+</html>
