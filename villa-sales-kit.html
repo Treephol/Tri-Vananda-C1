@@ -472,52 +472,60 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
   color:rgba(255,255,255,0.3); letter-spacing:0.05em; margin-top:6px; line-height:1.6;
 }
 
-/* ══════════════════════════════════════
-   SLIDE 10 — WHY FAMILIES CHOOSE THIS
-══════════════════════════════════════ */
-#s10 { background:var(--green); justify-content:space-between; }
-#s10 .s10-body { flex:1; padding:20px 56px 0; display:flex; flex-direction:column; justify-content:center; gap:14px; }
-#s10 .s10-kicker { font-family:var(--sans); font-size:8px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.35); }
-#s10 .s10-heading { font-family:var(--serif); font-size:clamp(26px,3.2vw,40px); font-weight:300; color:var(--cream); line-height:1.1; letter-spacing:-0.02em; }
-#s10 .s10-heading em { font-style:italic; }
-#s10 .s10-table { width:100%; border-collapse:collapse; }
-#s10 .s10-table thead tr { border-bottom:0.5px solid rgba(255,255,255,0.2); }
-#s10 .s10-table th { font-family:var(--sans); font-size:8.5px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.4); padding:8px 10px; text-align:left; }
-#s10 .s10-table th:not(:first-child) { text-align:right; }
-#s10 .s10-table td { font-family:var(--serif); font-size:16px; font-weight:400; color:rgba(255,255,255,0.8); padding:9px 10px; border-bottom:0.5px solid rgba(255,255,255,0.06); vertical-align:middle; }
-#s10 .s10-table td:not(:first-child) { text-align:right; }
-#s10 .s10-table tr:last-child td { border-bottom:none; }
-#s10 .td-villa-name { color:var(--cream) !important; font-weight:500 !important; }
-#s10 .td-type-badge { font-size:8px !important; font-family:var(--sans) !important; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35) !important; display:block; margin-top:2px; }
-#s10 .td-yield { font-family:var(--sans) !important; font-size:17px !important; font-weight:600; color:#a8d5b0 !important; }
-#s10 .s10-disclaimer { font-family:var(--sans); font-size:8px; font-weight:300; color:rgba(255,255,255,0.2); line-height:1.5; letter-spacing:0.01em; padding-top:10px; border-top:0.5px solid rgba(255,255,255,0.1); }
 
 /* ══════════════════════════════════════
-   SLIDE 11 — CAPITAL GAIN PROJECTION
+   IMAGE SLIDES
 ══════════════════════════════════════ */
-#s11 { background:var(--paper); justify-content:space-between; }
-#s11 .s11-body { flex:1; padding:16px 56px 0; display:flex; flex-direction:column; justify-content:center; gap:10px; }
-#s11 .s11-kicker { font-family:var(--sans); font-size:8px; letter-spacing:0.28em; text-transform:uppercase; color:var(--ink-3); }
-#s11 .s11-heading { font-family:var(--serif); font-size:clamp(24px,3vw,38px); font-weight:300; line-height:1.1; letter-spacing:-0.015em; color:var(--ink); }
-#s11 .s11-heading em { font-style:italic; }
-#s11 .s11-subline { font-family:var(--sans); font-size:13px; font-weight:300; color:var(--ink-3); letter-spacing:0.02em; }
-#s11 .s11-chart-wrap { display:flex; flex-direction:column; gap:6px; }
-#s11 .s11-bars { display:flex; align-items:flex-end; gap:8px; height:110px; }
-#s11 .s11-bar-col { display:flex; flex-direction:column; align-items:center; gap:2px; flex:1; height:100%; justify-content:flex-end; }
-#s11 .s11-bar-val { font-family:var(--serif); font-size:11px; color:var(--ink-2); white-space:nowrap; }
-#s11 .s11-bar { width:100%; background:var(--green); border-radius:2px 2px 0 0; }
-#s11 .s11-bar-year { font-family:var(--sans); font-size:8px; font-weight:500; letter-spacing:0.08em; color:var(--ink-3); margin-top:2px; }
-#s11 .s11-axis { height:0.5px; background:var(--sand); width:100%; }
-#s11 .s11-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--sand-2); }
-#s11 .s11-stat { background:white; padding:12px 16px; display:flex; flex-direction:column; gap:3px; }
-#s11 .s11-stat:nth-child(2) { background:var(--green); }
-#s11 .s11-stat-label { font-family:var(--sans); font-size:7.5px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-3); }
-#s11 .s11-stat:nth-child(2) .s11-stat-label { color:rgba(255,255,255,0.4); }
-#s11 .s11-stat-value { font-family:var(--serif); font-size:26px; font-weight:300; color:var(--ink); line-height:1; }
-#s11 .s11-stat:nth-child(2) .s11-stat-value { color:var(--cream); }
-#s11 .s11-stat-note { font-family:var(--sans); font-size:12px; font-weight:300; color:var(--ink-3); line-height:1.4; }
-#s11 .s11-stat:nth-child(2) .s11-stat-note { color:rgba(255,255,255,0.4); }
-#s11 .s11-source { font-family:var(--sans); font-size:8px; font-weight:300; color:var(--ink-3); opacity:0.6; letter-spacing:0.05em; }
+.img-slide-body {
+  flex:1; display:flex; align-items:stretch; justify-content:center;
+  padding:12px 56px; gap:0; overflow:hidden;
+}
+.img-placeholder {
+  width:100%; height:100%; position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--sand-2); border-radius:2px;
+}
+.img-placeholder.dark { background:rgba(255,255,255,0.06); }
+.img-placeholder img { width:100%; height:100%; object-fit:cover; }
+.img-filename {
+  position:absolute; bottom:14px; right:16px;
+  font-family:var(--sans); font-size:8px; font-weight:400;
+  letter-spacing:0.12em; text-transform:uppercase;
+  color:rgba(0,0,0,0.35); background:rgba(255,255,255,0.75);
+  padding:4px 10px; border-radius:1px; backdrop-filter:blur(4px);
+}
+.img-filename.light {
+  color:rgba(255,255,255,0.5); background:rgba(0,0,0,0.35);
+}
+.img-caption {
+  position:absolute; top:20px; left:24px;
+  font-family:var(--serif); font-size:22px; font-weight:300;
+  color:rgba(255,255,255,0.85); letter-spacing:-0.01em;
+  text-shadow:0 1px 8px rgba(0,0,0,0.3);
+}
+.img-caption.dark-text { color:var(--ink); text-shadow:none; }
+.img-grid-2 {
+  flex:1; display:grid; grid-template-columns:1fr 1fr; gap:2px;
+  padding:12px 56px; overflow:hidden;
+}
+.img-grid-3 {
+  flex:1; display:grid; grid-template-columns:1fr 1fr 1fr; gap:2px;
+  padding:12px 56px; overflow:hidden;
+}
+.img-cell {
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--sand-2); border-radius:2px;
+}
+.img-cell.dark { background:rgba(255,255,255,0.06); }
+.img-cell img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.img-cell .img-filename { font-size:7px; bottom:10px; right:12px; }
+.img-cell-label {
+  font-family:var(--sans); font-size:8px; font-weight:500;
+  letter-spacing:0.18em; text-transform:uppercase;
+  color:rgba(255,255,255,0.6); text-shadow:0 1px 4px rgba(0,0,0,0.3);
+  position:absolute; top:16px; left:16px;
+}
 </style>
 </head>
 <body>
@@ -543,7 +551,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
       </div>
       <div class="cover-meta-item">
         <span class="cover-meta-label">Scale</span>
-        <span class="cover-meta-value">237 Acres · 9 Lakes · 7 Villa Types</span>
+        <span class="cover-meta-value">232 Acres · 9 Lakes · 7 Villa Types</span>
       </div>
       <div class="cover-meta-item">
         <span class="cover-meta-label">Delivered when</span>
@@ -552,7 +560,26 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     </div>
   </div>
   <div class="slide-footer footer-dark">
-    <span>01 / 11</span>
+    <span>01 / 17</span>
+    <span>For private circulation</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — Cover Visual ══ -->
+<div class="slide" id="img01" style="background:var(--green);">
+  <div class="slide-header" style="padding-top:32px;">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:rgba(255,255,255,0.25);">Tri Vananda · Phuket</span>
+  </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder dark">
+      <img src="cover-banyan-tree.jpg" alt="Tri Vananda — banyan tree in forest">
+      <span class="img-caption">Where serenity meets longevity</span>
+      <span class="img-filename light">cover-banyan-tree.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer footer-dark" style="background:var(--green);">
+    <span>02 / 17</span>
     <span>For private circulation</span>
   </div>
 </div>
@@ -561,26 +588,26 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
 <div class="slide" id="s02">
   <div class="slide-header">
     <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
-    <span class="slide-header-label" style="color:var(--ink-3);">I — Before the numbers</span>
+    <span class="slide-header-label" style="color:var(--ink-3);">I — The philosophy</span>
   </div>
   <div class="s02-body">
-    <div class="s02-kicker">I — Before the numbers</div>
+    <div class="s02-kicker">I — The philosophy</div>
     <div class="s02-statement">
-      "We did not design this for buyers. We designed it for people who intend to actually live here — and whose standards for what that means are already high."
+      "Tri Vananda was born from a family's personal journey through illness and recovery — a belief that living well is not a luxury, but a way of life rooted in nature, community, and genuine human connection."
     </div>
     <div class="s02-grid">
       <div class="s02-cell">
-        <div class="s02-cell-label">What this document is</div>
-        <div class="s02-cell-text">A complete picture of what ownership at Tri Vananda means — the ecosystem, the architecture, the models, and the life it makes possible. Not a sales pitch. A reference for a decision already forming.</div>
+        <div class="s02-cell-label">The meaning of the name</div>
+        <div class="s02-cell-text">"Tri" represents brotherhood and multigenerational community. "Vana" is the Thai word for forest — reflecting biophilic design and connection to nature. "Nanda" means ultimate happiness — affirming a life of longevity and joy.</div>
       </div>
       <div class="s02-cell">
-        <div class="s02-cell-label">What this document is not</div>
-        <div class="s02-cell-text">The beginning of the conversation. By the time this reaches you, you have already visited, already asked the questions that matter, and already decided whether this is the kind of life you want to build.</div>
+        <div class="s02-cell-label">The vision</div>
+        <div class="s02-cell-text">A multigenerational well-living community where like-minded people come to heal body and soul, embrace nature, and interact with community — learning how to become healthier and happier, together.</div>
       </div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>02 / 11</span>
+    <span>03 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -592,44 +619,65 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
   </div>
   <div class="s03-left">
     <div class="s03-section-label">II — What you are buying into</div>
-    <div class="s03-heading">An ecosystem,<br>not a<br><em>property.</em></div>
-    <div class="s03-subtext">Everything here is already operating at the standard you hold elsewhere. The brands below are not aspirations. They are the infrastructure of daily life at Tri Vananda, today and arriving.</div>
+    <div class="s03-heading">Three pillars.<br>One<br><em>address.</em></div>
+    <div class="s03-subtext">Wellness, community, and nature. Each one shapes how this place works. Together they hold it steady, year after year.</div>
   </div>
   <div class="s03-right">
     <div class="s03-items">
       <div class="s03-item">
-        <div class="s03-item-num">01</div>
+        <div class="s03-item-num">CLP</div>
         <div class="s03-item-content">
-          <div class="s03-item-title">Trisara — Benchmark Luxury Resort</div>
-          <div class="s03-item-desc">Phuket's benchmark for privacy, impeccable service, and world-class hospitality. Our service standard is inspired by over twenty years of Trisara experience — that same attention shapes daily life at Tri Vananda.</div>
+          <div class="s03-item-title">Clinique La Prairie · Wellness</div>
+          <div class="s03-item-desc">Clinique La Prairie Health Resort opening soon at Tri Vananda — ninety years of longevity science, structured into daily life. Not a spa. A clinical programme with real protocols.</div>
+          <span class="s03-item-tag">Opening Soon</span>
+        </div>
+      </div>
+      <div class="s03-item">
+        <div class="s03-item-num">Trisara</div>
+        <div class="s03-item-content">
+          <div class="s03-item-title">Hospitality Experience · Community</div>
+          <div class="s03-item-desc">Our service standard is inspired by over twenty years of Trisara — one of Thailand's most respected names in private hospitality. That same standard now guides how we look after every family here.</div>
           <span class="s03-item-tag tag-live">Operational</span>
         </div>
       </div>
       <div class="s03-item">
-        <div class="s03-item-num">02</div>
+        <div class="s03-item-num">85%</div>
         <div class="s03-item-content">
-          <div class="s03-item-title">PRU — Michelin ★ · Jampa — Farm to Table</div>
-          <div class="s03-item-desc">PRU holds two Michelin stars. Jampa — locally grown, live fire, zero waste — supplies daily produce to residents from the community farm. Both are your dining, not a restaurant you visit nearby.</div>
-          <span class="s03-item-tag tag-live">Operational</span>
-        </div>
-      </div>
-      <div class="s03-item">
-        <div class="s03-item-num">03</div>
-        <div class="s03-item-content">
-          <div class="s03-item-title">Health Resort by Clinique La Prairie</div>
-          <div class="s03-item-desc">Southeast Asia's debut of the world's foremost longevity institution. Medical assessments, preventive programs, and the four-pillar CLP philosophy — Medical, Wellbeing, Nutrition, Movement — arriving at your address.</div>
-          <span class="s03-item-tag">Q4 2026</span>
-        </div>
-      </div>
-      <div class="s03-item">
-        <div class="s03-item-num">04</div>
-        <div class="s03-item-content">
-          <div class="s03-item-title">Future Wellness Expansion</div>
-          <div class="s03-item-desc">Further wellness and residential offerings are in development — details to be announced. The vision is a fully integrated ecosystem connecting longevity, community, nature, and science.</div>
-          <span class="s03-item-tag">2026–2027</span>
+          <div class="s03-item-title">Nature</div>
+          <div class="s03-item-desc">Only 15% of 232 acres is built on. The rest — nine lakes, forest, working farm — is not amenity. It is the foundation everything else rests on.</div>
+          <span class="s03-item-tag tag-live">Protected</span>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- ══ IMAGE — Partners & Ecosystem ══ -->
+<div class="slide" id="img03" style="background:#1a1714;">
+  <div class="slide-header" style="padding-top:32px;">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:rgba(255,255,255,0.25);">Three pillars — in images</span>
+  </div>
+  <div class="img-grid-3">
+    <div class="img-cell dark">
+      <img src="clp-spa-interior.jpg" alt="Clinique La Prairie spa interior">
+      <span class="img-cell-label">Clinique La Prairie · Wellness</span>
+      <span class="img-filename light">clp-spa-interior.jpg</span>
+    </div>
+    <div class="img-cell dark">
+      <img src="trisara-beach-resort.jpg" alt="Trisara beach resort">
+      <span class="img-cell-label">Trisara · Community</span>
+      <span class="img-filename light">trisara-beach-resort.jpg</span>
+    </div>
+    <div class="img-cell dark">
+      <img src="tri-vananda-pavilion.jpg" alt="Tri Vananda nature and landscape">
+      <span class="img-cell-label">Nature</span>
+      <span class="img-filename light">tri-vananda-pavilion.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer footer-dark">
+    <span>05 / 17</span>
+    <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
 
@@ -704,7 +752,31 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     </div>
   </div>
   <div class="slide-footer">
-    <span>04 / 11</span>
+    <span>06 / 17</span>
+    <span>Tri Vananda · Phuket, Thailand</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — VANA & NANDA Exteriors ══ -->
+<div class="slide" id="img04" style="background:var(--cream);">
+  <div class="slide-header">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:var(--ink-3);">Two architectures — visual</span>
+  </div>
+  <div class="img-grid-2">
+    <div class="img-cell">
+      <img src="vana-villa-exterior.jpg" alt="VANA villa exterior">
+      <span class="img-cell-label" style="color:var(--ink);text-shadow:none;">VANA</span>
+      <span class="img-filename">vana-villa-exterior.jpg</span>
+    </div>
+    <div class="img-cell">
+      <img src="nanda-villa-exterior.jpg" alt="NANDA villa exterior">
+      <span class="img-cell-label" style="color:var(--ink);text-shadow:none;">NANDA</span>
+      <span class="img-filename">nanda-villa-exterior.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>07 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -799,7 +871,26 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     <div class="s05-note">All villas fully furnished and equipped. Show villas from 71 MB (USD 2.2M). Leasehold and freehold available — see ownership models.</div>
   </div>
   <div class="slide-footer">
-    <span>05 / 11</span>
+    <span>08 / 17</span>
+    <span>Tri Vananda · Phuket, Thailand</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — Residential Villas Hero ══ -->
+<div class="slide" id="img05" style="background:var(--paper);">
+  <div class="slide-header">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:var(--ink-3);">Residential villas</span>
+  </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder">
+      <img src="residential-villas-pool-hero.jpg" alt="Residential Villas at Tri Vananda">
+      <span class="img-caption" style="color:var(--ink);text-shadow:none;font-size:28px;">Residential Villas at Tri Vananda</span>
+      <span class="img-filename">residential-villas-pool-hero.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>09 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -823,7 +914,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
           <div class="s06-model-item">All <strong>7 villa types</strong> available</div>
           <div class="s06-model-item">Vana 2, 3, 4 · Nanda 2, 2+, 3, 4+</div>
           <div class="s06-model-item">Fully furnished &amp; equipped</div>
-          <div class="s06-model-item">Trisara-inspired <strong>service standard</strong></div>
+          <div class="s06-model-item">Professional estate management</div>
         </div>
       </div>
       <div class="s06-model">
@@ -835,7 +926,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
           <div class="s06-model-item"><strong>5 villa types</strong> available</div>
           <div class="s06-model-item">Vana 2, 3, 4 · Nanda 2+, 4+</div>
           <div class="s06-model-item">Fully furnished &amp; equipped</div>
-          <div class="s06-model-item">Trisara-inspired <strong>service standard</strong></div>
+          <div class="s06-model-item">Professional estate management</div>
         </div>
       </div>
       <div class="s06-model">
@@ -870,7 +961,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     </div>
   </div>
   <div class="slide-footer footer-dark">
-    <span>06 / 11</span>
+    <span>10 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -888,7 +979,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
       <div class="s07-sys">
         <div class="s07-sys-num">01</div>
         <div class="s07-sys-name">Land</div>
-        <div class="s07-sys-desc">237 acres · nine lakes · wetland nature reserve · biking and forest trails. Less than 15% developed. The remaining 85% is yours to move through, daily.</div>
+        <div class="s07-sys-desc">232 acres · nine lakes · wetland nature reserve · biking and forest trails. Less than 15% developed. The remaining 85% is yours to move through, daily.</div>
       </div>
       <div class="s07-sys">
         <div class="s07-sys-num">02</div>
@@ -903,7 +994,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
       <div class="s07-sys">
         <div class="s07-sys-num">04</div>
         <div class="s07-sys-name">Service</div>
-        <div class="s07-sys-desc">Farm to Villa daily produce · personal concierge · Trisara-inspired service standard. The friction of ownership removed. What remains is simply life.</div>
+        <div class="s07-sys-desc">Farm to Villa daily produce · personal concierge · professional estate management. The friction of ownership removed. What remains is simply life.</div>
       </div>
       <div class="s07-sys">
         <div class="s07-sys-num">05</div>
@@ -918,20 +1009,39 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
       </div>
       <div class="s07-tl-item">
         <div class="s07-tl-date">Q4 2026</div>
-        <div class="s07-tl-text">Health Resort by Clinique La Prairie · Opening</div>
+        <div class="s07-tl-text">Health Resort by Clinique La Prairie opens</div>
       </div>
       <div class="s07-tl-item">
         <div class="s07-tl-date">2027</div>
-        <div class="s07-tl-text">Phase Two residential villas · Further wellness offerings</div>
+        <div class="s07-tl-text">Phase Two residential villas</div>
       </div>
       <div class="s07-tl-item">
         <div class="s07-tl-date">2028</div>
-        <div class="s07-tl-text">Full ecosystem operational — the complete Tri Vananda vision realised</div>
+        <div class="s07-tl-text">Full ecosystem operational — the complete Tri Vananda vision in residence</div>
       </div>
     </div>
   </div>
   <div class="slide-footer">
-    <span>07 / 11</span>
+    <span>11 / 17</span>
+    <span>Tri Vananda · Phuket, Thailand</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — Master Plan ══ -->
+<div class="slide" id="img07" style="background:var(--paper);">
+  <div class="slide-header">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:var(--ink-3);">Master plan</span>
+  </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder">
+      <img src="master-plan-aerial.jpg" alt="Tri Vananda Master Plan">
+      <span class="img-caption dark-text" style="font-size:28px;">Master Plan</span>
+      <span class="img-filename">master-plan-aerial.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>12 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -986,7 +1096,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
         </div>
         <div class="s08-partner">
           <div class="s08-partner-name">Trisara</div>
-          <div class="s08-partner-role">Phuket's benchmark luxury resort · 20+ years of hospitality excellence · Service standard inspiration</div>
+          <div class="s08-partner-role">Phuket's most luxurious private pool villa beach resort · Benchmark for privacy and world-class hospitality</div>
         </div>
       </div>
       <div class="s08-partner-block">
@@ -1007,34 +1117,64 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     </div>
   </div>
   <div class="slide-footer">
-    <span>08 / 11</span>
+    <span>13 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
 
-<!-- ══ SLIDE 10 — OWNERSHIP VALUE (replaces yield & capital slides) ══ -->
-<div class="slide" id="s10">
-  <div class="slide-header" style="padding-top:32px;">
+<!-- ══ IMAGE — Phuket Map ══ -->
+<div class="slide" id="img08" style="background:var(--paper);">
+  <div class="slide-header">
     <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
-    <span class="slide-header-label" style="color:rgba(255,255,255,0.25);letter-spacing:0.2em;font-size:8px;font-family:var(--sans);">VIII — Why families choose this</span>
+    <span class="slide-header-label" style="color:var(--ink-3);">Location</span>
   </div>
-  <div class="s10-body" style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:0 56px;">
-    <div class="s10-kicker" style="font-family:var(--sans);font-size:8.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink3);margin-bottom:28px;">VIII — Why families choose this</div>
-    <div class="s10-heading" style="font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);font-weight:300;line-height:1.1;color:var(--green);letter-spacing:-.015em;margin-bottom:36px;">This is not a property<br>in a portfolio.<br><em>It is a home your family<br>grows into.</em></div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:720px;">
-      <div>
-        <div style="font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;padding-bottom:12px;border-bottom:.5px solid var(--sand);">What you get</div>
-        <div style="font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.75;color:var(--ink2);">A private villa inside 232 acres of nature. Clinical wellness on your doorstep. A community of families who think long-term. Service inspired by twenty years of Trisara hospitality.</div>
-      </div>
-      <div>
-        <div style="font-family:var(--sans);font-size:8px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink3);margin-bottom:12px;padding-bottom:12px;border-bottom:.5px solid var(--sand);">What you leave behind</div>
-        <div style="font-family:var(--sans);font-size:14px;font-weight:300;line-height:1.75;color:var(--ink2);">Land your grandchildren will inherit — not just in title, but in memory. The forest they climbed. The lake they swam. The place that shaped how they see the world.</div>
-      </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder" style="background:#8a9a87;">
+      <img src="phuket-location-map.jpg" alt="Phuket location map">
+      <span class="img-caption" style="font-size:28px;">A sanctuary at the heart of the island</span>
+      <span class="img-filename light">phuket-location-map.jpg</span>
     </div>
-    <div style="margin-top:36px;font-family:var(--sans);font-size:11px;color:var(--ink3);font-style:italic;max-width:500px;">Financial details including rental programme and market context are available on request during a private consultation.</div>
   </div>
   <div class="slide-footer">
-    <span>09 / 09</span>
+    <span>14 / 17</span>
+    <span>Tri Vananda · Phuket, Thailand</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — VANA Interior ══ -->
+<div class="slide" id="img10" style="background:var(--green);">
+  <div class="slide-header" style="padding-top:32px;">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:rgba(255,255,255,0.25);">VANA interior</span>
+  </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder dark">
+      <img src="vana-interior-living-dining.jpg" alt="VANA interior living and dining">
+      <span class="img-caption" style="font-size:26px;">VANA — The biophilic design perfection</span>
+      <span class="img-filename light">vana-interior-living-dining.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer footer-dark">
+    <span>15 / 17</span>
+    <span>Tri Vananda · Branded Rental Program</span>
+  </div>
+</div>
+
+<!-- ══ IMAGE — NANDA Interior ══ -->
+<div class="slide" id="img11" style="background:var(--paper);">
+  <div class="slide-header">
+    <img src="logo-white.png" class="real-logo" alt="Tri Vananda">
+    <span class="slide-header-label" style="color:var(--ink-3);">NANDA interior</span>
+  </div>
+  <div class="img-slide-body">
+    <div class="img-placeholder">
+      <img src="nanda-interior-double-height.jpg" alt="NANDA interior double-height living">
+      <span class="img-caption" style="color:var(--ink);text-shadow:none;font-size:26px;">NANDA — A modernist homage to nature</span>
+      <span class="img-filename">nanda-interior-double-height.jpg</span>
+    </div>
+  </div>
+  <div class="slide-footer">
+    <span>16 / 17</span>
     <span>Tri Vananda · Phuket, Thailand</span>
   </div>
 </div>
@@ -1059,7 +1199,7 @@ html, body { font-family:var(--sans); background:#111; -webkit-font-smoothing:an
     </div>
   </div>
   <div class="slide-footer footer-dark" style="position:relative;z-index:2;">
-    <span>11 / 11</span>
+    <span>17 / 17</span>
     <span>Build, Belong &amp; Bloom</span>
   </div>
 </div>
@@ -1095,34 +1235,6 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
   if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') changeSlide(-1);
 });
-// Capital gain bar chart
-(function() {
-  const data = [
-    { year: '2026', val: 63.6 },
-    { year: '2027', val: 69.96 },
-    { year: '2028', val: 76.95 },
-    { year: '2029', val: 84.65 },
-    { year: '2030', val: 93.12 },
-    { year: '2031', val: 102.43 },
-    { year: '2032', val: 112.67 },
-    { year: '2033', val: 123.94 },
-  ];
-  const maxVal = Math.max(...data.map(d => d.val));
-  const container = document.getElementById('capitalBars');
-  if (!container) return;
-  data.forEach((d, i) => {
-    const heightPct = (d.val / maxVal) * 100;
-    const opacity = 0.45 + (i / (data.length - 1)) * 0.55;
-    const col = document.createElement('div');
-    col.className = 's11-bar-col';
-    col.innerHTML = `
-      <div class="s11-bar-val">${d.val}M</div>
-      <div class="s11-bar" style="height:${heightPct}%;opacity:${opacity.toFixed(2)};"></div>
-      <div class="s11-bar-year">${d.year}</div>
-    `;
-    container.appendChild(col);
-  });
-})();
 
 let touchStartX = 0;
 document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
