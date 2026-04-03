@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tri Vananda — Montara Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:     #181614;
+  --ink-2:   #3d3a37;
+  --ink-3:   #6e6a65;
+  --ink-4:   #9e9a95;
+  --paper:   #f4f1ec;
+  --paper-2: #ece8e1;
+  --rule:    #d4cfc8;
+  --accent:  #233f2f;
+  --grn:     #233f2f;
+  --grn-deep:#162a1f;
+  --serif:   'EB Garamond', Georgia, serif;
+  --display: 'Playfair Display', 'Times New Roman', serif;
+  --sans:    'Jost', 'Helvetica Neue', sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--paper); color:var(--ink); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+
+.reveal { opacity:0; transform:translateY(14px); transition:opacity .9s ease, transform .9s ease; }
+.reveal.on { opacity:1; transform:none; }
+
+.label {
+  font-family:var(--sans); font-size:10px; letter-spacing:0.34em;
+  text-transform:uppercase; color:var(--ink-4); margin-bottom:20px;
+}
+
+/* ══════════════════════════════════════════════════
+   MONTARA PORTFOLIO
+   ══════════════════════════════════════════════════ */
+
+.portfolio-section {
+  padding:80px 60px 80px;
+  background:var(--paper-2);
+}
+
+.portfolio-header {
+  display:flex; justify-content:space-between; align-items:flex-end;
+  margin-bottom:44px; flex-wrap:wrap; gap:16px;
+}
+.portfolio-h {
+  font-family:var(--display); font-size:clamp(22px,2.6vw,34px);
+  font-weight:400; font-style:italic; line-height:1.28;
+  color:var(--ink); letter-spacing:-0.015em;
+}
+.portfolio-link {
+  font-family:var(--sans); font-size:10px; letter-spacing:0.24em;
+  text-transform:uppercase; color:var(--ink-3); text-decoration:none;
+  border-bottom:0.5px solid var(--rule); padding-bottom:2px;
+  transition:color .3s, border-color .3s;
+}
+.portfolio-link:hover { color:var(--ink); border-color:var(--ink-3); }
+
+/* ── Brand grid ── */
+.brand-grid {
+  display:grid;
+  gap:3px;
+}
+.brand-row-2 {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3px;
+}
+.brand-row-3 {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:3px;
+}
+
+/* ── Brand card (big — 2-col rows) ── */
+.brand-card {
+  position:relative;
+  overflow:hidden;
+  background:var(--paper);
+  transition:background .3s;
+}
+.brand-card:hover { background:#fff; }
+.brand-card:hover .brand-card-img { transform:scale(1.02); }
+
+.brand-card-img {
+  width:100%; height:220px;
+  background-size:cover; background-position:center;
+  background-color:var(--paper-2);
+  transition:transform .6s ease;
+}
+
+.brand-card-info {
+  padding:20px 24px 22px;
+}
+.brand-card-name {
+  font-family:var(--display); font-size:clamp(20px,2vw,26px);
+  font-weight:400; font-style:italic; line-height:1.18;
+  color:var(--ink); letter-spacing:-0.012em; margin-bottom:4px;
+}
+.brand-card-cat {
+  font-family:var(--sans); font-size:9px; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--accent);
+}
+
+/* ── Brand card (small — 3-col row) ── */
+.brand-card-sm .brand-card-img {
+  height:150px;
+}
+.brand-card-sm .brand-card-info {
+  padding:16px 18px 18px;
+}
+.brand-card-sm .brand-card-name {
+  font-size:clamp(17px,1.6vw,21px);
+  margin-bottom:3px;
+}
+.brand-card-sm .brand-card-cat {
+  font-size:8px; letter-spacing:0.18em;
+}
+
+/* ── Awards ── */
+.awards-strip {
+  margin-top:3px;
+  background:var(--paper);
+  padding:24px 32px;
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+.awards-label {
+  font-family:var(--sans); font-size:9px; letter-spacing:0.28em;
+  text-transform:uppercase; color:var(--ink-4);
+  margin-right:32px; flex-shrink:0;
+}
+.awards-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex:1;
+  gap:0;
+}
+.award-item {
+  flex:1;
+  display:flex; align-items:center; justify-content:center;
+  height:104px;
+  padding:12px 16px;
+  opacity:.45;
+  transition:opacity .3s;
+}
+.award-item:hover { opacity:.85; }
+.award-item img {
+  max-height:80px;
+  max-width:100%;
+  object-fit:contain;
+  display:block;
+}
+
+/* ══════════════════════════════════════════
+   MOBILE
+   ══════════════════════════════════════════ */
+@media (max-width:768px) {
+  .portfolio-section { padding:56px 24px 64px; }
+  .portfolio-header { flex-direction:column; align-items:flex-start; gap:12px; }
+  .portfolio-h { font-size:clamp(20px,5vw,28px); }
+
+  .brand-row-2 { grid-template-columns:1fr; }
+  .brand-row-3 { grid-template-columns:1fr; }
+  .brand-card-img { height:200px; }
+  .brand-card-sm .brand-card-img { height:180px; }
+  .brand-card-info { padding:16px 20px 18px; }
+  .brand-card-name { font-size:clamp(19px,4.5vw,24px); }
+  .brand-card-sm .brand-card-name { font-size:clamp(18px,4.5vw,22px); }
+
+  .awards-strip { flex-direction:column; gap:16px; padding:20px 16px; }
+  .awards-label { margin-right:0; }
+  .awards-row { flex-wrap:wrap; justify-content:center; }
+  .award-item { flex:0 0 20%; height:96px; }
+  .award-item img { max-height:68px; }
+}
+@media (max-width:420px) {
+  .portfolio-section { padding:48px 18px 56px; }
+  .brand-card-img { height:170px; }
+  .brand-card-sm .brand-card-img { height:150px; }
+  .brand-card-info { padding:14px 16px 16px; }
+  .brand-card-sm .brand-card-info { padding:12px 14px 14px; }
+}
+
+.preview-banner {
+  background:var(--grn); color:rgba(244,241,236,.5);
+  font-family:var(--sans); font-size:10px; letter-spacing:.28em;
+  text-transform:uppercase; text-align:center;
+  padding:14px 24px; line-height:1.7;
+}
+.preview-banner span { color:rgba(244,241,236,.25); }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  Appendix Section Preview
+  <br><span>Insert before #final CTA in index.html</span>
+</div>
+
+
+<!-- ═══ MONTARA PORTFOLIO ═══ -->
+
+<section class="portfolio-section" id="montara-portfolio">
+
+  <div class="portfolio-header reveal">
+    <div>
+      <p class="label">Montara Hospitality Group</p>
+      <p class="portfolio-h">The portfolio of Montara Hospitality Group.</p>
+    </div>
+    <a href="https://www.montarahospitality.com" target="_blank" rel="noopener" class="portfolio-link">montarahospitality.com &rarr;</a>
+  </div>
+
+  <div class="brand-grid">
+
+    <!-- Row 1: Trisara | Tri Vananda -->
+    <div class="brand-row-2 reveal">
+      <div class="brand-card">
+        <div class="brand-card-img" style="background-image:url('trisara-01.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">Trisara</p>
+          <p class="brand-card-cat">Luxury Resort · Phuket</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card-img" style="background-image:url('hero.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">Tri Vananda</p>
+          <p class="brand-card-cat">Wellness Community · Phuket</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: PRU | Praya Palazzo -->
+    <div class="brand-row-2 reveal">
+      <div class="brand-card">
+        <div class="brand-card-img" style="background-image:url('jampa-02.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">PRU</p>
+          <p class="brand-card-cat">Michelin-Starred Restaurant · Phuket</p>
+        </div>
+      </div>
+      <div class="brand-card">
+        <div class="brand-card-img" style="background-image:url('montara/praya-palazzo.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">Praya Palazzo</p>
+          <p class="brand-card-cat">Heritage Hotel · Bangkok</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Cielo & Spices | La Crique | Thai Library -->
+    <div class="brand-row-3 reveal">
+      <div class="brand-card brand-card-sm">
+        <div class="brand-card-img" style="background-image:url('montara/cielo-spices.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">Cielo &amp; Spices</p>
+          <p class="brand-card-cat">International Dining</p>
+        </div>
+      </div>
+      <div class="brand-card brand-card-sm">
+        <div class="brand-card-img" style="background-image:url('montara/la-crique.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">La Crique</p>
+          <p class="brand-card-cat">Oceanfront Mediterranean</p>
+        </div>
+      </div>
+      <div class="brand-card brand-card-sm">
+        <div class="brand-card-img" style="background-image:url('montara/thai-library.jpg');"></div>
+        <div class="brand-card-info">
+          <p class="brand-card-name">Thai Library</p>
+          <p class="brand-card-cat">Contemporary Thai Cuisine</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Awards -->
+    <div class="awards-strip reveal">
+      <p class="awards-label">Recognition</p>
+      <div class="awards-row">
+        <div class="award-item"><img src="condenast-goldlist2025-transparent.svg" alt="Condé Nast Traveler Gold List 2025"></div>
+        <div class="award-item"><img src="TL-Award-2024-OK-transparent.png" alt="Travel + Leisure Luxury Awards 2024"></div>
+        <div class="award-item"><img src="Michelin-key-logo.svg" alt="Michelin 2026"></div>
+        <div class="award-item"><img src="Michelin-key-logo-transparent.png" alt="Michelin 2025"></div>
+        <div class="award-item"><img src="TL-Tastemaker2024-transparent.svg" alt="Travel + Leisure Tastemakers 2024"></div>
+        <div class="award-item"><img src="green-transparent.png" alt="Michelin Sustainable Gastronomy"></div>
+        <div class="award-item"><img src="50best-descovery-transparent.svg" alt="50 Best Discovery"></div>
+        <div class="award-item"><img src="Ahead-final-list-transparent.svg" alt="AHEAD Asia Finalist"></div>
+        <div class="award-item"><img src="Q-GAP-Logo-transparent.png" alt="Q Mark Thailand"></div>
+        <div class="award-item"><img src="thai-select.jpg" alt="Thai Select"></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      const siblings = [...e.target.parentElement.querySelectorAll('.reveal:not(.on)')];
+      const idx = siblings.indexOf(e.target);
+      setTimeout(() => e.target.classList.add('on'), idx * 60);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
